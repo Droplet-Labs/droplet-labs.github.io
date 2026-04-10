@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://dropletlabs.co"),
   title: "Droplet Labs — We Build Software That Scales",
   description:
-    "Custom websites, web apps, SaaS products, and AI integration — built fast, built right. Droplet Labs is your end-to-end software development partner.",
+    "We build software that scales — websites, web apps, SaaS products, and AI integration. Droplet Labs is your end-to-end software development partner.",
   openGraph: {
     title: "Droplet Labs — We Build Software That Scales",
     description:
-      "Custom websites, web apps, SaaS products, and AI integration — built fast, built right.",
+      "We build software that scales — websites, web apps, SaaS products, and AI integration.",
     url: "https://dropletlabs.co",
     siteName: "Droplet Labs",
     images: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Droplet Labs — We Build Software That Scales",
     description:
-      "Custom websites, web apps, SaaS products, and AI integration — built fast, built right.",
+      "We build software that scales — websites, web apps, SaaS products, and AI integration.",
     images: ["/og-image.png"],
   },
   alternates: { canonical: "https://dropletlabs.co" },
