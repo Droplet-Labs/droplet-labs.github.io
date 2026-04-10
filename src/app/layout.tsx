@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const outfit = Outfit({
   subsets: ["latin"],
+  variable: "--font-outfit",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
 });
 
 export const metadata: Metadata = {
-  title: "Droplet Labs | SaaS Development & Consulting",
+  title: "Droplet Labs | We Build Software That Scales",
   description:
-    "We build scalable SaaS architectures, MVP development, AI integrations, and cloud architectures.",
+    "From pixel-perfect websites to full-stack SaaS platforms — supercharged with AI. We ship fast, build smart, and don't do mediocre.",
 };
 
 export default function RootLayout({
@@ -18,10 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={`${inter.className} antialiased bg-background text-foreground selection:bg-black selection:text-white`}
-      >
+    <html
+      lang="en"
+      className={`${outfit.variable} ${jetbrainsMono.variable} scroll-smooth`}
+    >
+      <body className="font-[family-name:var(--font-outfit)] antialiased bg-background text-foreground">
         {children}
       </body>
     </html>
