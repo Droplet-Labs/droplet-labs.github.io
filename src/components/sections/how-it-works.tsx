@@ -18,11 +18,11 @@ export function HowItWorks() {
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
         <MotionWrapper>
-          <span className="font-[family-name:var(--font-jetbrains)] text-xs text-water-dark-cyan tracking-[0.2em]">
+          <span className="font-[family-name:var(--font-jetbrains)] text-sm text-water-dark-cyan tracking-[0.2em]">
             {"// PROCESS"}
           </span>
-          <h2 className="font-[family-name:var(--font-outfit)] text-3xl md:text-4xl font-bold tracking-tight text-foreground mt-3">
-            How it works
+          <h2 className="font-[family-name:var(--font-outfit)] text-4xl md:text-5xl font-bold tracking-tight text-foreground mt-3">
+            How we work
           </h2>
         </MotionWrapper>
 
@@ -40,15 +40,15 @@ export function HowItWorks() {
                 }}
               />
               <span
-                className="font-[family-name:var(--font-jetbrains)] text-3xl font-bold block mb-3"
+                className="font-[family-name:var(--font-jetbrains)] text-4xl font-bold block mb-3"
                 style={{ color: step.colorFaded }}
               >
                 {step.number}
               </span>
-              <h3 className="font-[family-name:var(--font-outfit)] text-sm font-semibold text-foreground">
+              <h3 className="font-[family-name:var(--font-outfit)] text-base font-semibold text-foreground">
                 {step.title}
               </h3>
-              <p className="text-xs text-muted-foreground leading-relaxed mt-2">
+              <p className="text-sm text-muted-foreground leading-relaxed mt-2">
                 {step.description}
               </p>
             </motion.div>

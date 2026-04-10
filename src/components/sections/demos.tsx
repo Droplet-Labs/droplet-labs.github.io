@@ -78,13 +78,13 @@ export function Demos() {
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
         <MotionWrapper>
-          <span className="font-[family-name:var(--font-jetbrains)] text-xs text-water-dark-cyan tracking-[0.2em]">
+          <span className="font-[family-name:var(--font-jetbrains)] text-sm text-water-dark-cyan tracking-[0.2em]">
             {"// DEMOS"}
           </span>
-          <h2 className="font-[family-name:var(--font-outfit)] text-3xl md:text-4xl font-bold tracking-tight text-foreground mt-3">
+          <h2 className="font-[family-name:var(--font-outfit)] text-4xl md:text-5xl font-bold tracking-tight text-foreground mt-3">
             See it in action
           </h2>
-          <p className="text-muted-foreground text-sm mt-2">
+          <p className="text-muted-foreground text-base mt-2">
             Click through, break things — it&apos;s all real code
           </p>
         </MotionWrapper>
@@ -106,13 +106,13 @@ export function Demos() {
                 <DemoPreview type={demo.previewType} />
               </div>
               <div className="p-5">
-                <h3 className="font-[family-name:var(--font-outfit)] text-sm font-semibold text-foreground">
+                <h3 className="font-[family-name:var(--font-outfit)] text-base font-semibold text-foreground">
                   {demo.title}
                 </h3>
-                <p className="text-xs text-muted-foreground mt-1">
+                <p className="text-sm text-muted-foreground mt-1">
                   {demo.description}
                 </p>
-                <span className="font-[family-name:var(--font-jetbrains)] text-xs text-water-dark-cyan mt-3 inline-block">
+                <span className="font-[family-name:var(--font-jetbrains)] text-sm text-water-dark-cyan mt-3 inline-block">
                   Try demo &rarr;
                 </span>
               </div>

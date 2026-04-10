@@ -18,10 +18,10 @@ export function ServicesBuild() {
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
         <MotionWrapper>
-          <span className="font-[family-name:var(--font-jetbrains)] text-xs text-water-dark-cyan tracking-[0.2em]">
+          <span className="font-[family-name:var(--font-jetbrains)] text-sm text-water-dark-cyan tracking-[0.2em]">
             {"// SERVICES"}
           </span>
-          <h2 className="font-[family-name:var(--font-outfit)] text-3xl md:text-4xl font-bold tracking-tight text-foreground mt-3">
+          <h2 className="font-[family-name:var(--font-outfit)] text-4xl md:text-5xl font-bold tracking-tight text-foreground mt-3">
             What we build
           </h2>
         </MotionWrapper>
@@ -46,22 +46,22 @@ export function ServicesBuild() {
               />
 
               <span
-                className="font-[family-name:var(--font-jetbrains)] text-xs tracking-[0.15em]"
+                className="font-[family-name:var(--font-jetbrains)] text-sm tracking-[0.15em]"
                 style={{ color: service.color.tagText }}
               >
                 {service.number}
               </span>
-              <h3 className="font-[family-name:var(--font-outfit)] text-base font-semibold text-foreground mt-2">
+              <h3 className="font-[family-name:var(--font-outfit)] text-lg font-semibold text-foreground mt-2">
                 {service.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mt-2">
+              <p className="text-base text-muted-foreground leading-relaxed mt-2">
                 {service.description}
               </p>
               <div className="flex flex-wrap gap-1.5 mt-4">
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-[family-name:var(--font-jetbrains)] text-xs px-2.5 py-1 rounded"
+                    className="font-[family-name:var(--font-jetbrains)] text-sm px-2.5 py-1 rounded"
                     style={{
                       backgroundColor: service.color.tagBg,
                       color: service.color.tagText,
