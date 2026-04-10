@@ -21,13 +21,11 @@ export function ContactCta() {
         color="rgba(6,182,212,0.1)"
         size={300}
         className="left-[20%] top-[30%]"
-        parallaxSpeed={0.2}
       />
       <GradientOrb
         color="rgba(14,165,233,0.08)"
         size={200}
         className="right-[20%] bottom-[10%]"
-        parallaxSpeed={0.3}
         floatDuration={6}
       />
 

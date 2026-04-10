@@ -26,20 +26,17 @@ export function Hero() {
           color="rgba(6,182,212,0.2)"
           size={400}
           className="right-[-5%] top-[10%]"
-          parallaxSpeed={0.3}
         />
         <GradientOrb
           color="rgba(34,211,238,0.15)"
           size={200}
           className="right-[20%] bottom-[15%]"
-          parallaxSpeed={0.5}
           floatDuration={6}
         />
         <GradientOrb
           color="rgba(8,145,178,0.12)"
           size={150}
           className="left-[5%] bottom-[30%]"
-          parallaxSpeed={0.2}
           floatDuration={10}
         />
 

@@ -73,7 +73,6 @@ export function Demos() {
         color="rgba(6,182,212,0.06)"
         size={200}
         className="left-[-5%] top-[30%]"
-        parallaxSpeed={0.15}
       />
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">

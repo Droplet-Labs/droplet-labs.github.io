@@ -20,6 +20,7 @@ export function MotionWrapper({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, delay, ease: "easeOut" as const }}
+      style={{ willChange: "transform, opacity" }}
       className={cn(className)}
     >
       {children}

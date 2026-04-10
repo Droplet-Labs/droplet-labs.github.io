@@ -23,10 +23,10 @@ export function FloatingCard({
         ease: "easeInOut",
       }}
       className={cn(
-        "bg-white/[0.06] border border-white/[0.08] backdrop-blur-xl rounded-xl p-4",
+        "bg-white/[0.06] border border-white/[0.08] floating-card-blur rounded-xl p-4",
         className
       )}
-      style={{ transform: `rotate(${rotation}deg)` }}
+      style={{ transform: `rotate(${rotation}deg)`, willChange: "transform" }}
     >
       {children}
     </motion.div>

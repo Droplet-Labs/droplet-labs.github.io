@@ -75,6 +75,29 @@
   }
 }
 
+/* Orb blur — reduced on mobile for performance */
+.orb-blur {
+  filter: blur(60px);
+}
+
+/* Floating card blur — backdrop-blur on desktop, solid bg on mobile */
+.floating-card-blur {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+@media (max-width: 768px) {
+  .orb-blur {
+    filter: blur(30px);
+  }
+
+  .floating-card-blur {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
 /* Grain overlay */
 .grain-overlay::before {
   content: "";
@@ -86,4 +109,11 @@
   pointer-events: none;
   mix-blend-mode: overlay;
   z-index: 9999;
+}
+
+/* Disable grain overlay on mobile — SVG filter + mix-blend-mode causes jank */
+@media (max-width: 768px) {
+  .grain-overlay::before {
+    display: none;
+  }
 }
