@@ -3,6 +3,7 @@ import { socialLinks } from "@/lib/constants";
 export function Footer() {
   return (
     <footer
+      aria-label="Footer"
       className="border-t border-water-cyan/10 py-8 px-6 md:px-12"
       style={{ background: "#041c2c" }}
     >
@@ -15,6 +16,9 @@ export function Footer() {
             <a
               key={link.label}
               href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Droplet Labs on ${link.label}`}
               className="text-white/40 text-xs hover:text-water-cyan transition-colors"
             >
               {link.label}

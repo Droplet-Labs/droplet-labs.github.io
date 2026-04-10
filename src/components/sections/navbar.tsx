@@ -21,6 +21,7 @@ export function Navbar() {
 
   return (
     <nav
+      aria-label="Main navigation"
       className={cn(
         "sticky top-0 z-50 transition-all duration-300 border-b",
         isScrolled

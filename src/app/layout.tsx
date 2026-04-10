@@ -13,9 +13,68 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Droplet Labs | We Build Software That Scales",
+  metadataBase: new URL("https://dropletlabs.co"),
+  title: "Droplet Labs — We Build Software That Scales",
   description:
-    "From pixel-perfect websites to full-stack SaaS platforms — supercharged with AI. We ship fast, build smart, and don't do mediocre.",
+    "Custom websites, web apps, SaaS products, and AI integration — built fast, built right. Droplet Labs is your end-to-end software development partner.",
+  openGraph: {
+    title: "Droplet Labs — We Build Software That Scales",
+    description:
+      "Custom websites, web apps, SaaS products, and AI integration — built fast, built right.",
+    url: "https://dropletlabs.co",
+    siteName: "Droplet Labs",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Droplet Labs — We Build Software That Scales",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Droplet Labs — We Build Software That Scales",
+    description:
+      "Custom websites, web apps, SaaS products, and AI integration — built fast, built right.",
+    images: ["/og-image.png"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/site.webmanifest",
+  alternates: { canonical: "https://dropletlabs.co" },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Droplet Labs",
+  url: "https://dropletlabs.co",
+  description:
+    "Custom software development — websites, web apps, SaaS products, AI integration, API development, and ongoing maintenance & support.",
+  serviceType: [
+    "Web Development",
+    "SaaS Development",
+    "AI Integration",
+    "API Development",
+    "Software Maintenance",
+  ],
+  knowsAbout: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "AI",
+    "SaaS",
+    "Cloud Infrastructure",
+  ],
 };
 
 export default function RootLayout({
@@ -28,6 +87,12 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} ${jetbrainsMono.variable} scroll-smooth`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="font-[family-name:var(--font-outfit)] antialiased bg-background text-foreground">
         {children}
       </body>
