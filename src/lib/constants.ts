@@ -1,3 +1,5 @@
+export const CALENDLY_URL = "https://calendly.com/madhanmohankishan/30min";
+
 export const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Demos", href: "#demos" },
@@ -151,7 +153,8 @@ export const steps = [
 ] as const;
 
 export const socialLinks = [
-  { label: "Twitter", href: "#" },
-  { label: "LinkedIn", href: "#" },
-  { label: "GitHub", href: "#" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/droplet-labs/",
+  },
 ] as const;

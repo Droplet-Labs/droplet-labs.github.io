@@ -84,7 +84,7 @@ export function Demos() {
             See it in action
           </h2>
           <p className="text-muted-foreground text-base mt-2">
-            Click through, break things — it&apos;s all real code
+            Live demos dropping soon — real code, click through, break things
           </p>
         </MotionWrapper>
 
@@ -111,8 +111,8 @@ export function Demos() {
                 <p className="text-sm text-muted-foreground mt-1">
                   {demo.description}
                 </p>
-                <span className="font-[family-name:var(--font-jetbrains)] text-sm text-water-dark-cyan mt-3 inline-block">
-                  Try demo &rarr;
+                <span className="font-[family-name:var(--font-jetbrains)] text-[11px] tracking-[0.15em] uppercase text-water-dark-cyan bg-water-cyan/10 px-2 py-1 rounded mt-3 inline-block">
+                  Coming soon
                 </span>
               </div>
             </motion.div>

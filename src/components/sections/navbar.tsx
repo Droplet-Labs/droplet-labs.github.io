@@ -31,7 +31,7 @@ export function Navbar() {
     >
       <div className="max-w-5xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
         <a
-          href="#"
+          href="#hero"
           className={cn(
             "font-[family-name:var(--font-outfit)] font-bold text-lg tracking-tight transition-colors duration-300",
             isScrolled ? "text-foreground" : "text-white"

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { GradientOrb } from "@/components/gradient-orb";
+import { CALENDLY_URL } from "@/lib/constants";
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 40 },
@@ -56,7 +57,9 @@ export function ContactCta() {
           className="flex flex-col sm:flex-row gap-3 justify-center mt-10"
         >
           <a
-            href="#"
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-white text-ocean-teal font-bold text-sm py-3.5 px-8 rounded-xl hover:bg-white/90 transition-colors"
           >
             Book a Call
