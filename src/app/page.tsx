@@ -21,11 +21,11 @@ export default function Home() {
       <main className="bg-body-tint">
         <Problem />
         <Platform />
-        <Demos />
         <HowItWorks />
         <Ownership />
         <Fit />
         <Faq />
+        <Demos />
       </main>
       <WaveDivider direction="body-to-cta" />
       <ContactCta />

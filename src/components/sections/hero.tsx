@@ -53,9 +53,13 @@ export function Hero() {
 
             <motion.h1
               {...fadeUp(0.1)}
-              className="font-[family-name:var(--font-outfit)] text-5xl md:text-6xl font-bold tracking-tighter leading-[1.05] text-white mt-4"
+              className="font-[family-name:var(--font-outfit)] text-5xl md:text-6xl font-bold tracking-tighter leading-[1.05] text-balance text-white mt-4"
             >
-              {hero.headline}
+              {hero.headlineLines.map((line, index) => (
+                <span key={line} className={index > 0 ? "block" : undefined}>
+                  {line}
+                </span>
+              ))}
             </motion.h1>
 
             <motion.p

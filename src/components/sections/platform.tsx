@@ -18,7 +18,7 @@ export function Platform() {
       <GradientOrb
         color="rgba(6,182,212,0.06)"
         size={250}
-        className="right-[-5%] top-[20%]"
+        className="left-[-5%] top-[20%]"
       />
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">

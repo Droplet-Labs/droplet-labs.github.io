@@ -11,7 +11,7 @@ export const navLinks = [
 
 export const hero = {
   eyebrow: "// AI PLATFORM",
-  headline: "Your AI platform. On your cloud. In weeks.",
+  headlineLines: ["Your AI platform.", "On your cloud. In weeks."],
   sub: "Running AI agents in production takes most teams six months of infrastructure work before the first agent ships. We build the platform, hand it over, and train your team to run it. You build the agents.",
   primaryCta: "Book a call",
   secondaryCta: "See demos",
