@@ -14,14 +14,14 @@ export const ANALYTICS_DOMAIN =
 // Typical build length, shown in the FAQ.
 export const TYPICAL_BUILD_WEEKS: string | null = "4–6";
 
-// TODO(owner): pricing line, e.g. "The assessment is $X." The "What does it
-// cost?" FAQ entry stays hidden until this is set.
+// Optional pricing line, e.g. "The assessment is $X." The "What does it
+// cost?" FAQ entry stays hidden while this is null.
 export const PRICING_NOTE: string | null = null;
 
-// TODO(owner): areaServed for the JSON-LD, e.g. "Worldwide". Omitted until set.
+// Optional areaServed for the JSON-LD, e.g. "Worldwide". Omitted while null.
 export const AREA_SERVED: string | null = null;
 
-// TODO(owner, optional): founder LinkedIn URLs for the JSON-LD sameAs list.
+// Optional founder LinkedIn URLs for the JSON-LD sameAs list.
 export const FOUNDER_PROFILES: readonly string[] = [];
 
 export const navLinks = [
