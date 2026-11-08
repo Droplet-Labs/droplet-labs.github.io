@@ -8,6 +8,7 @@ import { Demos } from "@/components/sections/demos";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { Ownership } from "@/components/sections/ownership";
 import { Fit } from "@/components/sections/fit";
+import { Faq } from "@/components/sections/faq";
 import { ContactCta } from "@/components/sections/contact-cta";
 import { Footer } from "@/components/sections/footer";
 
@@ -24,6 +25,7 @@ export default function Home() {
         <HowItWorks />
         <Ownership />
         <Fit />
+        <Faq />
       </main>
       <WaveDivider direction="body-to-cta" />
       <ContactCta />
