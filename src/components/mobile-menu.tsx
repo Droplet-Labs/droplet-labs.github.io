@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { navLinks } from "@/lib/constants";
+import { navLinks, CALENDLY_URL } from "@/lib/constants";
 
 export function MobileMenu({
   isOpen,
@@ -32,11 +32,13 @@ export function MobileMenu({
               </a>
             ))}
             <a
-              href="#contact"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={onClose}
               className="mt-2 inline-flex items-center justify-center bg-gradient-to-r from-water-cyan to-water-sky text-white font-semibold text-sm py-2.5 px-5 rounded-lg"
             >
-              Let&apos;s Talk
+              Book a call
             </a>
           </nav>
         </motion.div>
