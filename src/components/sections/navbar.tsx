@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { navLinks } from "@/lib/constants";
+import { navLinks, CALENDLY_URL, BOOK_CALL_LABEL, story } from "@/lib/constants";
 import { MobileMenu } from "@/components/mobile-menu";
 import { cn } from "@/lib/utils";
 
@@ -15,6 +15,7 @@ export function Navbar() {
       const heroHeight = document.getElementById("hero")?.offsetHeight ?? 600;
       setIsScrolled(window.scrollY > heroHeight - 80);
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -23,62 +24,45 @@ export function Navbar() {
     <nav
       aria-label="Main navigation"
       className={cn(
-        "sticky top-0 z-50 transition-all duration-300 border-b",
+        "fixed top-0 inset-x-0 z-50 h-16 transition-colors duration-300 border-b",
         isScrolled
-          ? "bg-body-tint/80 backdrop-blur-xl border-black/[0.06]"
-          : "bg-[#041c2c] border-[#041c2c]"
+          ? "bg-[#041c2c] border-white/10"
+          : "bg-transparent border-transparent"
       )}
     >
-      <div className="max-w-5xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
-        <a
-          href="#hero"
-          className={cn(
-            "font-[family-name:var(--font-outfit)] font-bold text-lg tracking-tight transition-colors duration-300",
-            isScrolled ? "text-foreground" : "text-white"
-          )}
-        >
-          DROPLET LABS.
+      <div className="max-w-[1120px] mx-auto px-5 md:px-8 flex items-center justify-between h-16">
+        <a href="#hero" className="font-bold text-lg tracking-tight text-white">
+          {story.nav.brand}
         </a>
 
-        <div className="flex items-center gap-6">
-          <div className="hidden md:flex items-center gap-6">
+        <div className="flex items-center gap-7">
+          <div className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={cn(
-                  "text-sm transition-colors duration-300",
-                  isScrolled
-                    ? "text-muted-foreground hover:text-foreground"
-                    : "text-white/50 hover:text-white"
-                )}
+                className="text-[15px] text-white/65 hover:text-white transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </div>
 
-          <div
-            className={cn(
-              "hidden md:block w-px h-4 transition-colors duration-300",
-              isScrolled ? "bg-black/10" : "bg-white/10"
-            )}
-          />
-
           <a
-            href="#contact"
-            className="hidden md:inline-flex items-center bg-gradient-to-r from-water-cyan to-water-sky text-white font-semibold text-sm py-2 px-5 rounded-lg hover:opacity-90 transition-opacity"
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-full border border-white/35 px-3 py-1.5 text-[13px] md:px-4 md:py-2 md:text-[15px] font-semibold text-white hover:border-white transition-colors"
           >
-            Let&apos;s Talk
+            {BOOK_CALL_LABEL}
           </a>
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={cn(
-              "md:hidden transition-colors duration-300",
-              isScrolled ? "text-foreground" : "text-white"
-            )}
+            className="md:hidden text-white"
             aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>

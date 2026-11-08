@@ -1,28 +1,28 @@
-import { GrainOverlay } from "@/components/grain-overlay";
 import { Navbar } from "@/components/sections/navbar";
 import { Hero } from "@/components/sections/hero";
-import { WaveDivider } from "@/components/sections/wave-divider";
-import { ServicesBuild } from "@/components/sections/services-build";
-import { ServicesAfter } from "@/components/sections/services-after";
-import { Demos } from "@/components/sections/demos";
+import { Descent } from "@/components/sections/descent";
+import { Rise } from "@/components/sections/rise";
 import { HowItWorks } from "@/components/sections/how-it-works";
-import { ContactCta } from "@/components/sections/contact-cta";
+import { Fit } from "@/components/sections/fit";
+import { Faq } from "@/components/sections/faq";
+import { Demos } from "@/components/sections/demos";
+import { ClosingAsk } from "@/components/sections/closing-ask";
 import { Footer } from "@/components/sections/footer";
 
 export default function Home() {
   return (
     <>
-      <GrainOverlay />
       <Navbar />
       <Hero />
+      <Descent />
+      <Rise />
       <main className="bg-body-tint">
-        <ServicesBuild />
-        <ServicesAfter />
-        <Demos />
         <HowItWorks />
+        <Fit />
+        <Faq />
+        <Demos />
       </main>
-      <WaveDivider direction="body-to-cta" />
-      <ContactCta />
+      <ClosingAsk />
       <Footer />
     </>
   );

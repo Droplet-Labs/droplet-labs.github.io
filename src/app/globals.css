@@ -75,45 +75,87 @@
   }
 }
 
-/* Orb blur — reduced on mobile for performance */
-.orb-blur {
-  filter: blur(60px);
+/* ---- Story: continuous motion (bob, flow dash, scroll hint) ---- */
+@keyframes story-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes story-dash {
+  to { stroke-dashoffset: -28; }
+}
+@keyframes story-hint {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+.story-bob { animation: story-bob 4s ease-in-out infinite; }
+.story-hint { animation: story-hint 1.8s ease-in-out infinite; }
+
+/* ---- Story: stage-driven diagram states ---- */
+.layer rect {
+  fill: rgba(255, 255, 255, 0.035);
+  stroke: rgba(165, 243, 252, 0.14);
+  stroke-width: 1;
+  transition: fill 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+    stroke 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.layer text {
+  fill: rgba(255, 255, 255, 0.28);
+  transition: fill 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.layer .sub {
+  fill: rgba(165, 243, 252, 0.3);
+}
+.layer.on rect {
+  fill: rgba(6, 182, 212, 0.14);
+  stroke: rgba(34, 211, 238, 0.75);
+}
+.layer.on text {
+  fill: #fff;
+}
+.layer.on .sub {
+  fill: rgba(165, 243, 252, 0.8);
+}
+.layer.owned rect {
+  fill: rgba(20, 184, 166, 0.18);
+  stroke: rgba(94, 234, 212, 0.9);
+}
+.layer.owned text {
+  fill: #fff;
+}
+.layer.owned .sub {
+  fill: rgba(94, 234, 212, 0.85);
+}
+.flow {
+  stroke: #06b6d4;
+  stroke-width: 2;
+  stroke-dasharray: 4 10;
+  opacity: 0;
+  transition: opacity 0.9s;
+  animation: story-dash 1.2s linear infinite;
+}
+.flow.on {
+  opacity: 0.9;
+}
+.fade {
+  opacity: 0;
+  transition: opacity 0.9s 0.3s;
+}
+.fade.on {
+  opacity: 1;
 }
 
-/* Floating card blur — backdrop-blur on desktop, solid bg on mobile */
-.floating-card-blur {
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-}
-
-@media (max-width: 768px) {
-  .orb-blur {
-    filter: blur(30px);
+@media (prefers-reduced-motion: reduce) {
+  .story-bob,
+  .story-hint,
+  .flow {
+    animation: none;
   }
-
-  .floating-card-blur {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background: rgba(255, 255, 255, 0.08);
-  }
-}
-
-/* Grain overlay */
-.grain-overlay::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-size: 256px 256px;
-  opacity: 0.02;
-  pointer-events: none;
-  mix-blend-mode: overlay;
-  z-index: 9999;
-}
-
-/* Disable grain overlay on mobile — SVG filter + mix-blend-mode causes jank */
-@media (max-width: 768px) {
-  .grain-overlay::before {
-    display: none;
+  .layer rect,
+  .layer text,
+  .flow,
+  .fade {
+    transition: none;
   }
 }
