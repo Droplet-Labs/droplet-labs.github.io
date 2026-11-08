@@ -9,11 +9,13 @@ export const navLinks = [
   { label: "Demos", href: "#demos" },
 ] as const;
 
+export const BOOK_CALL_LABEL = "Book a call";
+
 export const hero = {
   eyebrow: "// AI PLATFORM",
   headlineLines: ["Your AI platform.", "On your cloud. In weeks."],
   sub: "Running AI agents in production takes most teams six months of infrastructure work before the first agent ships. We build the platform, hand it over, and train your team to run it. You build the agents.",
-  primaryCta: "Book a call",
+  primaryCta: BOOK_CALL_LABEL,
   secondaryCta: "See demos",
   stack: ["Your AI agents", "AI Platform", "Your cloud · your existing stack"],
   stackCaption: "built by Droplet Labs",
@@ -135,8 +137,13 @@ export const contact = {
   eyebrow: "// LET'S TALK",
   heading: "Ready to run AI in production?",
   sub: "Thirty minutes. Tell us what you're building and what you run today; we'll tell you what the platform looks like and how long it takes.",
-  primaryCta: "Book a call",
+  primaryCta: BOOK_CALL_LABEL,
   secondaryCta: "Email us",
+} as const;
+
+export const process = {
+  eyebrow: "// PROCESS",
+  heading: "How we work",
 } as const;
 
 export const steps = [

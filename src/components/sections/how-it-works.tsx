@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { steps } from "@/lib/constants";
+import { steps, process } from "@/lib/constants";
 import { GradientOrb } from "@/components/gradient-orb";
 import { StaggerGrid, staggerItemVariants } from "@/components/stagger-grid";
 import { MotionWrapper } from "@/components/motion-wrapper";
@@ -18,10 +18,10 @@ export function HowItWorks() {
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
         <MotionWrapper>
           <span className="font-[family-name:var(--font-jetbrains)] text-sm text-water-dark-cyan tracking-[0.2em]">
-            {"// PROCESS"}
+            {process.eyebrow}
           </span>
           <h2 className="font-[family-name:var(--font-outfit)] text-4xl md:text-5xl font-bold tracking-tight text-foreground mt-3">
-            How we work
+            {process.heading}
           </h2>
         </MotionWrapper>
 

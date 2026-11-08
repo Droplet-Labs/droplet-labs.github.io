@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { navLinks, CALENDLY_URL } from "@/lib/constants";
+import { navLinks, CALENDLY_URL, BOOK_CALL_LABEL } from "@/lib/constants";
 import { MobileMenu } from "@/components/mobile-menu";
 import { cn } from "@/lib/utils";
 
@@ -71,7 +71,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="hidden md:inline-flex items-center bg-gradient-to-r from-water-cyan to-water-sky text-white font-semibold text-sm py-2 px-5 rounded-lg hover:opacity-90 transition-opacity"
           >
-            Book a call
+            {BOOK_CALL_LABEL}
           </a>
 
           <button

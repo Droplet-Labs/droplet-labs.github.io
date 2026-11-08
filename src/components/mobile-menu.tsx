@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { navLinks, CALENDLY_URL } from "@/lib/constants";
+import { navLinks, CALENDLY_URL, BOOK_CALL_LABEL } from "@/lib/constants";
 
 export function MobileMenu({
   isOpen,
@@ -38,7 +38,7 @@ export function MobileMenu({
               onClick={onClose}
               className="mt-2 inline-flex items-center justify-center bg-gradient-to-r from-water-cyan to-water-sky text-white font-semibold text-sm py-2.5 px-5 rounded-lg"
             >
-              Book a call
+              {BOOK_CALL_LABEL}
             </a>
           </nav>
         </motion.div>
