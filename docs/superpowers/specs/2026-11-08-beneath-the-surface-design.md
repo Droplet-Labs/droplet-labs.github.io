@@ -135,23 +135,25 @@ stacked below, each a rounded rect with a title and a one-line sub; a
 appears at the final stage.
 
 Layers, top to bottom (titles and subs are final copy):
-1. One interface for agents, tools and models — *hosted or self-hosted*
-2. Model serving on your GPUs — *open models, on your infrastructure*
+1. One interface for agents, tools and models — *every route, chosen per task*
+2. Open models served on your GPUs — *next to the hosted ones, not instead*
 3. Fine-tuning and serving your own models — *versioned, rolled out, rolled back*
 4. Observability, usage and cost control — *per team, agent and model*
 5. Quotas, audit, runbooks, on-call — *the part nobody budgets for*
 
-**The story is the CTO's journey.** Every team arrives at needing a
-platform the same way; each chapter is a stage of that journey and lights
-the layer it brings into existence. Five chapters:
+**The story is how the routes accumulate.** Each chapter adds a way of
+reaching AI; none replaces the one before. The end state is all of them
+available on one platform, with agents and developers picking the right
+route per task. Each chapter lights the layer it brings into existence.
+Five chapters:
 
 | # | mono tag | H2 | paragraph | diagram |
 |---|---|---|---|---|
-| 1 | `stage 1 · an API key` | **It starts with an API key.** | One agent, one hosted model, a weekend. This is where everyone starts, and it works, for a while. | flow line on; layer 1 lit |
-| 2 | `stage 2 · your own GPUs` | **Then the bill arrives.** | At volume, public models stop adding up: cost, latency, data you'd rather keep. So you bring open-source models onto your own infrastructure, and now you're running GPUs and a serving stack. | layer 2 lit |
-| 3 | `stage 3 · your own models` | **Then you want models that know your business.** | You fine-tune on your data and need to serve those models next to the open ones, version them, roll them out, roll them back. | layer 3 lit |
-| 4 | `stage 4 · a platform` | **Now it's a platform, whether you planned one or not.** | Several models, several agents, several teams. Someone has to see every call, attribute what it costs, cap what runs away, and carry the pager. Six months of work, a team you don't have, none of it your core business. | layers 4 and 5 lit together |
-| 5 | `with Droplet Labs · weeks` | **We build what's beneath.** | The whole platform, on your cloud, in your accounts, in weeks. Fixed scope. Then we train your team and hand over the keys. | all layers "owned" |
+| 1 | `stage 1 · an API key` | **It starts with an API key.** | One agent, one hosted model, a weekend. This is where everyone starts, and for plenty of tasks it stays the right answer. | flow line on; layer 1 lit |
+| 2 | `stage 2 · your own GPUs` | **Then the bill arrives.** | For some workloads, public models stop adding up: cost at volume, latency, data you'd rather keep. So you bring open-source models onto your own GPUs for those tasks. The hosted models don't go away. Now there are two routes, and someone has to run a serving stack. | layer 2 lit |
+| 3 | `stage 3 · your own models` | **Then you want models that know your business.** | You fine-tune on your data and serve those models next to the hosted and open ones. Three routes now, and every agent should be free to pick the right one for the task in front of it. | layer 3 lit |
+| 4 | `stage 4 · a platform` | **Now it's a platform, whether you planned one or not.** | Three routes, several agents, several teams. One interface so each task reaches the right model. Someone to see every call, attribute what it costs, cap what runs away, and carry the pager. Six months of work, a team you don't have, none of it your core business. | layers 4 and 5 lit together |
+| 5 | `with Droplet Labs · weeks` | **We build what's beneath.** | The whole platform, on your cloud, in your accounts, in weeks. Hosted, open and your own models, all available, chosen per task. Fixed scope. Then we train your team and hand over the keys. | all layers "owned" |
 
 **Stages.** The chapter nearest the viewport centre sets the stage
 (IntersectionObserver threshold ~0.55 or framer-motion `useInView`).
@@ -171,8 +173,8 @@ sections; they no longer exist as separate sections.
 ### Act 3 — The rise (`#contact`), full viewport, centred
 Background gradient from deep through shelf to surface (dark → light).
 Five bobbing agent dots, staggered. H2 **Your agents, in production.**
-Paragraph: *You build the agents. We build the platform under them. Your
-team owns all of it.* Pill button **Book a 30-minute call** → Calendly.
+Paragraph: *Hosted, open or your own: your agents pick the model for the
+task. We build the platform under them. Your team owns all of it.* Pill button **Book a 30-minute call** → Calendly.
 Below the button, a plain text link **Email us** → `mailto:hello@dropletlabs.co`.
 
 ### Light sections (on `surface`, ink text, ruled style)
@@ -242,9 +244,13 @@ light sections.
 
 ## Decisions log
 
-- 2026-11-08, owner: the descent tells the CTO's journey (API key → own
-  GPUs → own models → a platform → we build it). "The bill arrives" is
-  confirmed as a trigger for stage 2, alongside latency and data.
+- 2026-11-08, owner: the descent tells how the routes accumulate (API key
+  → open models on own GPUs → own fine-tuned models → a platform → we
+  build it). "The bill arrives" is confirmed as one trigger for stage 2,
+  alongside latency and data.
+- 2026-11-08, owner: it is not a one-way journey. Every route stays
+  available on the platform; agents and developers pick per task. Copy
+  must never read as "move from hosted to self-hosted to fine-tuned".
 - 2026-11-08, author after builder check: stage→layer mapping fixed so all
   five layers are lit before turning mint; white text at the final stage;
   phone diagram keeps titles, drops subs, sits below the nav; closing ask
