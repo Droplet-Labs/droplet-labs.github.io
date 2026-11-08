@@ -2,11 +2,9 @@ import { GrainOverlay } from "@/components/grain-overlay";
 import { Navbar } from "@/components/sections/navbar";
 import { Hero } from "@/components/sections/hero";
 import { WaveDivider } from "@/components/sections/wave-divider";
-import { Problem } from "@/components/sections/problem";
-import { Platform } from "@/components/sections/platform";
+import { Descent } from "@/components/sections/descent";
 import { Demos } from "@/components/sections/demos";
 import { HowItWorks } from "@/components/sections/how-it-works";
-import { Ownership } from "@/components/sections/ownership";
 import { Fit } from "@/components/sections/fit";
 import { Faq } from "@/components/sections/faq";
 import { ContactCta } from "@/components/sections/contact-cta";
@@ -18,11 +16,9 @@ export default function Home() {
       <GrainOverlay />
       <Navbar />
       <Hero />
+      <Descent />
       <main className="bg-body-tint">
-        <Problem />
-        <Platform />
         <HowItWorks />
-        <Ownership />
         <Fit />
         <Faq />
         <Demos />
