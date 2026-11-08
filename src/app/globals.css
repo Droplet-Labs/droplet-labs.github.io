@@ -5,7 +5,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-outfit);
+  --font-sans: var(--font-bricolage);
   --font-mono: var(--font-jetbrains);
   --color-ring: var(--ring);
   --color-input: var(--input);
@@ -115,5 +115,90 @@
 @media (max-width: 768px) {
   .grain-overlay::before {
     display: none;
+  }
+}
+
+/* ---- Story: continuous motion (bob, flow dash, scroll hint) ---- */
+@keyframes story-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes story-dash {
+  to { stroke-dashoffset: -28; }
+}
+@keyframes story-hint {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+.story-bob { animation: story-bob 4s ease-in-out infinite; }
+.story-hint { animation: story-hint 1.8s ease-in-out infinite; }
+
+/* ---- Story: stage-driven diagram states ---- */
+.layer rect {
+  fill: rgba(255, 255, 255, 0.035);
+  stroke: rgba(165, 243, 252, 0.14);
+  stroke-width: 1;
+  transition: fill 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+    stroke 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.layer text {
+  fill: rgba(255, 255, 255, 0.28);
+  transition: fill 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.layer .sub {
+  fill: rgba(165, 243, 252, 0.3);
+}
+.layer.on rect {
+  fill: rgba(6, 182, 212, 0.14);
+  stroke: rgba(34, 211, 238, 0.75);
+}
+.layer.on text {
+  fill: #fff;
+}
+.layer.on .sub {
+  fill: rgba(165, 243, 252, 0.8);
+}
+.layer.owned rect {
+  fill: rgba(20, 184, 166, 0.18);
+  stroke: rgba(94, 234, 212, 0.9);
+}
+.layer.owned text {
+  fill: #fff;
+}
+.layer.owned .sub {
+  fill: rgba(94, 234, 212, 0.85);
+}
+.flow {
+  stroke: #06b6d4;
+  stroke-width: 2;
+  stroke-dasharray: 4 10;
+  opacity: 0;
+  transition: opacity 0.9s;
+  animation: story-dash 1.2s linear infinite;
+}
+.flow.on {
+  opacity: 0.9;
+}
+.fade {
+  opacity: 0;
+  transition: opacity 0.9s 0.3s;
+}
+.fade.on {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-bob,
+  .story-hint,
+  .flow {
+    animation: none;
+  }
+  .layer rect,
+  .layer text,
+  .flow,
+  .fade {
+    transition: none;
   }
 }
