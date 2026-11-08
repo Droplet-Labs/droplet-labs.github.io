@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { GradientOrb } from "@/components/gradient-orb";
-import { CALENDLY_URL } from "@/lib/constants";
+import { CALENDLY_URL, CONTACT_EMAIL, contact } from "@/lib/constants";
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 40 },
@@ -35,21 +35,21 @@ export function ContactCta() {
           {...fadeUp(0)}
           className="font-[family-name:var(--font-jetbrains)] text-xs text-water-dark-cyan tracking-[0.2em]"
         >
-          {"// LET'S GO"}
+          {contact.eyebrow}
         </motion.span>
 
         <motion.h2
           {...fadeUp(0.1)}
           className="font-[family-name:var(--font-outfit)] text-3xl md:text-5xl font-bold tracking-tight text-white mt-4"
         >
-          Got an idea? Let&apos;s build it.
+          {contact.heading}
         </motion.h2>
 
         <motion.p
           {...fadeUp(0.2)}
           className="text-white/50 text-base mt-4 max-w-md mx-auto"
         >
-          Tell us what you need — we&apos;ll tell you how fast we can ship it.
+          {contact.sub}
         </motion.p>
 
         <motion.div
@@ -62,13 +62,13 @@ export function ContactCta() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-white text-ocean-teal font-bold text-sm py-3.5 px-8 rounded-xl hover:bg-white/90 transition-colors"
           >
-            Book a Call
+            {contact.primaryCta}
           </a>
           <a
-            href="mailto:hello@dropletlabs.com"
+            href={`mailto:${CONTACT_EMAIL}`}
             className="inline-flex items-center justify-center border border-white/15 bg-white/5 backdrop-blur text-white/80 text-sm py-3.5 px-8 rounded-xl hover:bg-white/10 transition-colors"
           >
-            Email Us
+            {contact.secondaryCta}
           </a>
         </motion.div>
       </div>
