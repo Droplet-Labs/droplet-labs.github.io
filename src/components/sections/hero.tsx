@@ -19,10 +19,7 @@ export function Hero() {
           }}
           aria-hidden="true"
         />
-        <h1
-          className="text-[clamp(48px,8vw,120px)] font-semibold tracking-[-0.03em] leading-[0.95] text-white"
-          style={{ fontVariationSettings: '"opsz" 96' }}
-        >
+        <h1 className="text-[clamp(48px,8vw,120px)] font-semibold tracking-[-0.03em] leading-[0.95] text-white">
           {story.hero.headline}
         </h1>
         <p className="text-[clamp(20px,3.4vw,50px)] font-medium text-white/45 leading-snug mt-7 max-w-[26ch] mx-auto">

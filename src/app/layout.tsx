@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, JetBrains_Mono } from "next/font/google";
+import { Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-bricolage",
-  axes: ["opsz"],
+  variable: "--font-outfit",
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -71,7 +70,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bricolage.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      className={`${outfit.variable} ${jetbrainsMono.variable} scroll-smooth`}
     >
       <head>
         <script
@@ -79,7 +78,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-[family-name:var(--font-bricolage)] antialiased bg-background text-foreground">
+      <body className="font-[family-name:var(--font-outfit)] antialiased bg-background text-foreground">
         {children}
       </body>
     </html>

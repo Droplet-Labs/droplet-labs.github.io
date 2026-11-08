@@ -104,7 +104,7 @@ export const fit = {
 } as const;
 
 export const faq = {
-  heading: "Questions a CTO asks",
+  heading: "Questions you'll have",
   items: [
     {
       q: "Why not just call a hosted API?",

@@ -66,10 +66,10 @@ document is silent, the mockups are the answer.
 - Rules on light: `rgba(8,145,178,.22)`
 
 **Type**
-- **Bricolage Grotesque** (Google Fonts via `next/font/google`, variable,
-  with the `opsz` axis) for everything: display, headings, body, buttons.
-  Replaces Outfit. Display headlines at `opsz 96`, weight 600,
-  letter-spacing −0.03em, line-height ≈ 1.
+- **Outfit** (the site's existing typeface, via `next/font/google`) for
+  everything: display, headings, body, buttons. Display headlines at
+  weight 600, letter-spacing −0.03em, line-height ≈ 1. (Bricolage
+  Grotesque was tried and rejected by the owner.)
 - **JetBrains Mono** stays, used only for: chapter tags (`stage 1 · an
   API key`), the "run by your team" tag in the diagram, and the 1–4
   counter in "How we work" (render the index; leave `steps[].number`
@@ -190,7 +190,7 @@ In this order, each `py` ≈ 104px desktop, headings at clamp(34px, 3.6vw, 48px)
 - **Who it's for** (`#fit`): two-column brief. Left: heading. Right: two
   lists under bold run-in titles ("A good fit if you…", "Probably not a
   fit if you…"), plain bullets, no icons. Copy unchanged.
-- **Questions** (`#faq`): heading "Questions a CTO asks", then a
+- **Questions** (`#faq`): heading "Questions you'll have", then a
   definition list: each question bold on its own line, answer below in
   muted, single rule between items. Copy unchanged.
 - **Demos** (`#demos`): heading "Demos", one line "Coming soon." Nothing
@@ -264,6 +264,10 @@ light sections.
 - 2026-11-08, author after second builder check: phone vertical budget
   settled — canvas 44vh opaque, chapters top-aligned at 56vh, H2 28px and
   body 16px on phones.
+
+- 2026-11-08, owner: typeface stays Outfit (Bricolage Grotesque rejected
+  on sight). FAQ heading addresses the reader: "Questions you'll have",
+  not "Questions a CTO asks".
 
 ## Left to the builder
 - Exact Tailwind classes; whether stage logic uses IntersectionObserver or
