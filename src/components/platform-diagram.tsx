@@ -42,13 +42,13 @@ export function PlatformDiagram({
             !owned && stage >= LIT_AT[i] && "on",
             owned && "owned"
           )}
-          transform={`translate(60, ${100 + 96 * i})`}
+          transform={`translate(${compact ? 10 : 60}, ${100 + 96 * i})`}
         >
-          <rect width="400" height="78" rx="14" />
+          <rect width={compact ? 500 : 400} height="78" rx="14" />
           <text
             x="20"
-            y={compact ? 48 : 34}
-            fontSize={compact ? 24 : 15}
+            y={compact ? 46 : 34}
+            fontSize={compact ? 18 : 15}
             fontWeight="600"
             style={{ fontFamily: "inherit" }}
           >
