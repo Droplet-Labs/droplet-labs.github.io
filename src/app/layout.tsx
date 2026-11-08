@@ -14,13 +14,13 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dropletlabs.co"),
-  title: "Droplet Labs — We Build Software That Scales",
+  title: "Droplet Labs — AI Platform, built on your cloud",
   description:
-    "We build software that scales — websites, web apps, SaaS products, and AI integration. Droplet Labs is your end-to-end software development partner.",
+    "We build the AI platform your agents run on: model serving, agent tooling, observability and usage tracking, on your cloud, in weeks. Your team owns it.",
   openGraph: {
-    title: "Droplet Labs — We Build Software That Scales",
+    title: "Droplet Labs — AI Platform, built on your cloud",
     description:
-      "We build software that scales — websites, web apps, SaaS products, and AI integration.",
+      "We build the AI platform your agents run on: model serving, agent tooling, observability and usage tracking, on your cloud, in weeks. Your team owns it.",
     url: "https://dropletlabs.co",
     siteName: "Droplet Labs",
     images: [
@@ -28,16 +28,16 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Droplet Labs — We Build Software That Scales",
+        alt: "Droplet Labs — Your AI platform. On your cloud. In weeks.",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Droplet Labs — We Build Software That Scales",
+    title: "Droplet Labs — AI Platform, built on your cloud",
     description:
-      "We build software that scales — websites, web apps, SaaS products, and AI integration.",
+      "We build the AI platform your agents run on: model serving, agent tooling, observability and usage tracking, on your cloud, in weeks. Your team owns it.",
     images: ["/og-image.png"],
   },
   alternates: { canonical: "https://dropletlabs.co" },
@@ -48,21 +48,16 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "Droplet Labs",
   url: "https://dropletlabs.co",
+  email: "hello@dropletlabs.co",
   description:
-    "Custom software development — websites, web apps, SaaS products, AI integration, API development, and ongoing maintenance & support.",
-  serviceType: [
-    "Web Development",
-    "SaaS Development",
-    "AI Integration",
-    "API Development",
-    "Software Maintenance",
-  ],
+    "We build the AI platform your agents run on: model serving, agent tooling, observability and usage tracking, on your cloud, in weeks. Your team owns it.",
+  serviceType: ["AI Platform Engineering", "AI Infrastructure", "MLOps"],
   knowsAbout: [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "AI",
-    "SaaS",
+    "AI Agents",
+    "LLM Serving",
+    "Kubernetes",
+    "GPU Infrastructure",
+    "Observability",
     "Cloud Infrastructure",
   ],
 };
