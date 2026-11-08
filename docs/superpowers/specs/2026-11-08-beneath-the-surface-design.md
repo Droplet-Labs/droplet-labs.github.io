@@ -1,7 +1,8 @@
 # "Beneath the surface" — visual and narrative rework
 
 Date: 2026-11-08
-Status: approved in chat from the mockup (see Reference)
+Status: approved 2026-11-08 (mockup approved in chat; journey chapters and
+builder-check answers folded in, see Decisions log)
 Builds on: `2026-11-08-ai-platform-rework-design.md` (positioning, audience,
 copy). That spec's content principles still hold; this one replaces its
 page structure and visual style.
@@ -22,12 +23,17 @@ production.
 
 ## Reference
 
-The approved mockup is
-`.superpowers/brainstorm/12047-1794114293/content/look-story.html` (git-
-ignored). The builder copies it into `docs/superpowers/specs/assets/2026-11-08-look-story.html`
-in the first commit so the reference survives. Where this document and the
-mockup differ, this document wins; where this document is silent, the
-mockup is the answer.
+Two mockups, both committed under `docs/superpowers/specs/assets/`:
+
+- `2026-11-08-look-story.html` — the three-act story (hero, descent, rise).
+  Its chapter copy is superseded by the journey chapters below; its
+  mechanics, diagram and styling stand.
+- `2026-11-08-look-brief.html` — the "ruled" style for the light sections
+  (section padding, `.lead` two-column grid, `.item` rules, `.steps` with
+  the 2px ink top rule and mono counter).
+
+Where this document and a mockup differ, this document wins; where this
+document is silent, the mockups are the answer.
 
 ## Goals / non-goals / anti-goals
 
@@ -64,8 +70,10 @@ mockup is the answer.
   with the `opsz` axis) for everything: display, headings, body, buttons.
   Replaces Outfit. Display headlines at `opsz 96`, weight 600,
   letter-spacing −0.03em, line-height ≈ 1.
-- **JetBrains Mono** stays, used only for chapter tags ("month 1–2") and
-  the "run by your team" tag in the diagram. Nowhere else.
+- **JetBrains Mono** stays, used only for: chapter tags (`stage 1 · an
+  API key`), the "run by your team" tag in the diagram, and the 1–4
+  counter in "How we work" (render the index; leave `steps[].number`
+  alone). Nowhere else.
 - Body 18px / 1.5 on desktop; max measure ~40ch for story copy, ~56ch for
   explanatory paragraphs.
 
@@ -83,8 +91,9 @@ mockup is the answer.
 ## Page structure, top to bottom
 
 Section ids are fixed so nav links keep working:
-`hero`, `platform` (the descent), `how-it-works`, `fit`, `faq`, `demos`,
-`contact`.
+`hero`, `platform` (the descent), `contact` (the rise), `how-it-works`,
+`fit`, `faq`, `demos`. The `navLinks` label for `#faq` changes from "FAQ"
+to "Questions".
 
 ### Nav
 Fixed, transparent over the dark acts, solid `deep` with a bottom rule
@@ -107,51 +116,54 @@ Mobile: wordmark, pill, hamburger with the same links. The mockup's
   the deep colour.
 
 ### Act 2 — The descent (`#platform`), split layout, dark
-Desktop: two columns. Left is a sticky canvas (100vh) holding the SVG
-diagram; right is a column of six chapters, each ~100vh tall, vertically
-centred text, max 30ch. Mobile: canvas sticky at the top at 46vh, chapters
-below at 60vh each.
+Desktop: two columns. Left is a sticky canvas (100vh, with a `max-height`
+on the SVG so short laptop viewports don't clip it) holding the SVG
+diagram; right is a column of five chapters, each ~100vh tall, vertically
+centred text, max 30ch.
+
+Mobile (< 860px): the canvas is sticky **below the fixed nav**
+(`top: 64px`) at ~50vh; chapters follow at ~60vh each. On phones the
+diagram keeps the five layer titles and drops the sub-lines, with the
+title size scaled so it stays legible (≥ 11px rendered); the chapter copy
+carries the detail. The agent dot and "run by your team" tag must stay
+visible below the nav.
 
 **Diagram** (SVG, as in mockup): a surface line with the agent dot on it;
 a dotted flow line from the agent into the first layer; five layers
 stacked below, each a rounded rect with a title and a one-line sub; a
 "Your cloud" caption under the stack; a "run by your team" mono tag that
-appears at stage 6.
+appears at the final stage.
 
-Layers, top to bottom (titles are final copy):
+Layers, top to bottom (titles and subs are final copy):
 1. One interface for agents, tools and models — *hosted or self-hosted*
-2. Model serving on your GPUs — *open models and your own*
-3. Observability, usage and cost control — *per team, agent and model*
-4. Quotas, limits and audit — *no runaway agent*
-5. Runbooks, on-call, the way to scale it — *on your cloud, in your accounts*
+2. Model serving on your GPUs — *open models, on your infrastructure*
+3. Fine-tuning and serving your own models — *versioned, rolled out, rolled back*
+4. Observability, usage and cost control — *per team, agent and model*
+5. Quotas, audit, runbooks, on-call — *the part nobody budgets for*
+
+**The story is the CTO's journey.** Every team arrives at needing a
+platform the same way; each chapter is a stage of that journey and lights
+the layer it brings into existence. Five chapters:
+
+| # | mono tag | H2 | paragraph | diagram |
+|---|---|---|---|---|
+| 1 | `stage 1 · an API key` | **It starts with an API key.** | One agent, one hosted model, a weekend. This is where everyone starts, and it works, for a while. | flow line on; layer 1 lit |
+| 2 | `stage 2 · your own GPUs` | **Then the bill arrives.** | At volume, public models stop adding up: cost, latency, data you'd rather keep. So you bring open-source models onto your own infrastructure, and now you're running GPUs and a serving stack. | layer 2 lit |
+| 3 | `stage 3 · your own models` | **Then you want models that know your business.** | You fine-tune on your data and need to serve those models next to the open ones, version them, roll them out, roll them back. | layer 3 lit |
+| 4 | `stage 4 · a platform` | **Now it's a platform, whether you planned one or not.** | Several models, several agents, several teams. Someone has to see every call, attribute what it costs, cap what runs away, and carry the pager. Six months of work, a team you don't have, none of it your core business. | layers 4 and 5 lit together |
+| 5 | `with Droplet Labs · weeks` | **We build what's beneath.** | The whole platform, on your cloud, in your accounts, in weeks. Fixed scope. Then we train your team and hand over the keys. | all layers "owned" |
 
 **Stages.** The chapter nearest the viewport centre sets the stage
 (IntersectionObserver threshold ~0.55 or framer-motion `useInView`).
-- Stage 1: all layers silhouetted (faint fill, faint stroke, 28% text).
-- Stages 2–5: layer *n−1* lights (cyan fill/stroke, white text); earlier
-  layers stay lit. Flow line animates from stage 2.
-- Stage 6: all layers switch to mint ("owned"); "Your cloud" caption and
-  "run by your team" tag fade in.
-- Scrolling back up reverses (stages are set, not accumulated).
-
-**Chapters** (tag in mono, H2, paragraph). Copy is final:
-1. tag *beneath the surface* — **Six months of plumbing.** — Compute,
-   serving, a way for agents to reach tools and models, monitoring, cost
-   control. A platform team you don't have, building things that aren't
-   what your company is for.
-2. *month 1–2* — **Agents need a way in.** — One interface between your
-   agents and every model and tool they call, hosted or self-hosted, so
-   nothing is wired twice.
-3. *month 2–4* — **Models need somewhere to run.** — Serving on GPUs you
-   control. Open models, fine-tuned ones, your own.
-4. *month 4–5* — **Finance will ask what it costs.** — Every call seen,
-   attributed and capped. Per team, per agent, per model, in the
-   observability stack you already run.
-5. *month 5–6* — **Then someone has to run it.** — Quotas, audit,
-   runbooks, on-call. The part nobody budgets for.
-6. *with Droplet Labs: weeks* — **We build what's beneath.** — The whole
-   platform, on your cloud, in your accounts, in weeks. Fixed scope. Then
-   we train your team and hand over the keys.
+Stages are set, not accumulated, so scrolling up reverses.
+- Before chapter 1 is reached: all layers silhouetted (faint fill, faint
+  stroke, text at 28% white).
+- Stage *n* (1–4): the layers listed above are lit (cyan fill/stroke,
+  white text); layers from earlier stages stay lit. By the end of stage 4
+  all five layers are lit.
+- Stage 5: all layers switch to mint fill/stroke and **keep white text**
+  (the mockup dimmed text here; that was a bug). "Your cloud" caption and
+  the "run by your team" tag fade in.
 
 This act absorbs the previous spec's Problem, Platform, and Ownership
 sections; they no longer exist as separate sections.
@@ -177,6 +189,12 @@ In this order, each `py` ≈ 104px desktop, headings at clamp(34px, 3.6vw, 48px)
   muted, single rule between items. Copy unchanged.
 - **Demos** (`#demos`): heading "Demos", one line "Coming soon." Nothing
   else.
+- **Closing ask** (no id): a short dark band on `deep` before the footer.
+  One line, **Ready to see what's beneath your agents?**, and the pill
+  **Book a 30-minute call** → Calendly. This exists because the rise sits
+  mid-page and the FAQ (the objections section) would otherwise end on
+  "Coming soon." (Author's call after builder review; the owner may drop
+  it.)
 - **Footer**: unchanged content (copyright, LinkedIn), on `deep`.
 
 The old `WaveDivider` between body and CTA goes; Act 3 now precedes the
@@ -207,9 +225,10 @@ light sections.
   `ownership.tsx` as separate sections; `wave-divider.tsx` unless reused
   in Act 1.
 - `.floating-card-blur`, `.orb-blur` and related CSS in `globals.css`.
-- `hero`, `problem`, `platform`, `ownership` constants are replaced by new
-  `story` constants (see builder notes). `steps`, `fit`, `faq`,
-  `demosSection`, `contact`, `navLinks`, `CONTACT_EMAIL`,
+- `hero`, `problem`, `platform`, `ownership`, `contact` constants are
+  replaced by a new `story` constant holding Act 1, the five layers, the
+  five chapters, Act 3 and the closing ask. `steps`, `fit`, `faq`,
+  `demosSection`, `navLinks` (label edit only), `CONTACT_EMAIL`,
   `BOOK_CALL_LABEL` stay.
 
 ## Constraints
@@ -220,6 +239,17 @@ light sections.
 - `pnpm lint` and `pnpm build` green on every commit.
 - No horizontal scroll at 375px; sticky canvas must not trap scroll on
   iOS Safari (use `position: sticky`, never scroll-jacking).
+
+## Decisions log
+
+- 2026-11-08, owner: the descent tells the CTO's journey (API key → own
+  GPUs → own models → a platform → we build it). "The bill arrives" is
+  confirmed as a trigger for stage 2, alongside latency and data.
+- 2026-11-08, author after builder check: stage→layer mapping fixed so all
+  five layers are lit before turning mint; white text at the final stage;
+  phone diagram keeps titles, drops subs, sits below the nav; closing ask
+  added before the footer; `look-brief.html` committed as the reference
+  for the light sections; the How-we-work counter stays mono.
 
 ## Left to the builder
 - Exact Tailwind classes; whether stage logic uses IntersectionObserver or
