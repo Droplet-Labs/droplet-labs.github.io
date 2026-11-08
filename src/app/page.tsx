@@ -2,8 +2,8 @@ import { GrainOverlay } from "@/components/grain-overlay";
 import { Navbar } from "@/components/sections/navbar";
 import { Hero } from "@/components/sections/hero";
 import { WaveDivider } from "@/components/sections/wave-divider";
-import { ServicesBuild } from "@/components/sections/services-build";
-import { ServicesAfter } from "@/components/sections/services-after";
+import { Problem } from "@/components/sections/problem";
+import { Platform } from "@/components/sections/platform";
 import { Demos } from "@/components/sections/demos";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { ContactCta } from "@/components/sections/contact-cta";
@@ -16,8 +16,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <main className="bg-body-tint">
-        <ServicesBuild />
-        <ServicesAfter />
+        <Problem />
+        <Platform />
         <Demos />
         <HowItWorks />
       </main>
