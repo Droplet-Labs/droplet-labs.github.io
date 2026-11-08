@@ -8,6 +8,8 @@ export function ClosingAsk() {
       </p>
       <a
         href={CALENDLY_URL}
+        data-analytics-event="book_call_click"
+        data-analytics-position="footer"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block mt-8 rounded-full bg-white text-[#041c2c] font-semibold px-7 py-4 text-[17px] hover:bg-white/90 transition-colors"

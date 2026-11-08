@@ -1,6 +1,28 @@
+// The one booking URL every "Book a call" button uses.
+// TODO(owner): replace with the branded booking URL (e.g. https://calendly.com/dropletlabs/30min).
 export const CALENDLY_URL = "https://calendly.com/madhanmohankishan/30min";
 
 export const CONTACT_EMAIL = "hello@dropletlabs.co";
+
+export const SITE_URL = "https://dropletlabs.co";
+
+// Plausible site domain. Analytics only loads in production builds.
+// TODO(owner): confirm Plausible as the provider and add this domain in Plausible.
+export const ANALYTICS_DOMAIN =
+  process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ?? "dropletlabs.co";
+
+// Typical build length, shown in the FAQ.
+export const TYPICAL_BUILD_WEEKS: string | null = "4–6";
+
+// TODO(owner): pricing line, e.g. "The assessment is $X." The "What does it
+// cost?" FAQ entry stays hidden until this is set.
+export const PRICING_NOTE: string | null = null;
+
+// TODO(owner): areaServed for the JSON-LD, e.g. "Worldwide". Omitted until set.
+export const AREA_SERVED: string | null = null;
+
+// TODO(owner, optional): founder LinkedIn URLs for the JSON-LD sameAs list.
+export const FOUNDER_PROFILES: readonly string[] = [];
 
 export const navLinks = [
   { label: "Platform", href: "#platform" },
@@ -15,7 +37,7 @@ export const story = {
   nav: { brand: "Droplet Labs" },
   hero: {
     headline: "The agent is the easy part.",
-    sub: "Everyone wants to ship AI agents. Beneath every one that runs in production sits six months of infrastructure.",
+    sub: "Beneath every agent in production sits six months of infrastructure. We build it for you, on your cloud, in weeks, and hand it to your team.",
     hint: "Scroll down to see what's beneath",
   },
   layers: [
@@ -49,7 +71,7 @@ export const story = {
     {
       tag: "stage 2 · your own GPUs",
       heading: "Then the bill arrives.",
-      body: "For some workloads, public models stop adding up: cost at volume, latency, data you'd rather keep. So you bring open-source models onto your own GPUs for those tasks. The hosted models don't go away. Now there are two routes, and someone has to run a serving stack.",
+      body: "For some workloads, public models stop adding up: cost at volume, latency, data you'd rather keep. So you bring open-source models onto your own GPUs for those tasks. The hosted models don't go away. Now there are two routes for a request to take, hosted and self-hosted, and someone has to run a serving stack.",
     },
     {
       tag: "stage 3 · your own models",
@@ -128,17 +150,31 @@ export const faq = {
     },
     {
       q: "How long, really?",
-      a: "Assessment in a week, build in weeks, not months. Exact scope and timeline come out of the assessment.",
+      a: [
+        "Assessment in a week, build in weeks, not months.",
+        TYPICAL_BUILD_WEEKS && `A typical build is ${TYPICAL_BUILD_WEEKS} weeks.`,
+        "Exact scope and timeline come out of the assessment.",
+      ]
+        .filter(Boolean)
+        .join(" "),
     },
+    ...(PRICING_NOTE
+      ? [
+          {
+            q: "What does it cost?",
+            a: `Every build is fixed-scope and quoted after the assessment. ${PRICING_NOTE}`,
+          },
+        ]
+      : []),
   ],
-} as const;
+};
 
 export const demosSection = {
   heading: "Demos",
   note: "Coming soon.",
 } as const;
 
-export const process = {
+export const processSection = {
   heading: "How we work",
 } as const;
 

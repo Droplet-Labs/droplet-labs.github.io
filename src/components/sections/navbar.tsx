@@ -11,10 +11,9 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const heroHeight = document.getElementById("hero")?.offsetHeight ?? 600;
-      setIsScrolled(window.scrollY > heroHeight - 80);
-    };
+    // Solid as soon as any content scrolls under the header, so nothing
+    // shows through behind the links.
+    const handleScroll = () => setIsScrolled(window.scrollY > 0);
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -25,7 +24,7 @@ export function Navbar() {
       aria-label="Main navigation"
       className={cn(
         "fixed top-0 inset-x-0 z-50 h-16 transition-colors duration-300 border-b",
-        isScrolled
+        isScrolled || isMobileMenuOpen
           ? "bg-[#041c2c] border-white/10"
           : "bg-transparent border-transparent"
       )}
@@ -50,6 +49,8 @@ export function Navbar() {
 
           <a
             href={CALENDLY_URL}
+            data-analytics-event="book_call_click"
+            data-analytics-position="nav"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-full border border-white/35 px-3 py-1.5 text-[13px] md:px-4 md:py-2 md:text-[15px] font-semibold text-white hover:border-white transition-colors"
