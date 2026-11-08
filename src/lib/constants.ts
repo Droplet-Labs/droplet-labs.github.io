@@ -81,70 +81,7 @@ export const story = {
   },
 } as const;
 
-export const hero = {
-  eyebrow: "// AI PLATFORM",
-  headlineLines: ["Your AI platform.", "On your cloud. In weeks."],
-  sub: "Running AI agents in production takes most teams six months of infrastructure work before the first agent ships. We build the platform, hand it over, and train your team to run it. You build the agents.",
-  primaryCta: BOOK_CALL_LABEL,
-  secondaryCta: "See demos",
-  stack: ["Your AI agents", "AI Platform", "Your cloud · your existing stack"],
-  stackCaption: "built by Droplet Labs",
-  stats: [
-    { value: "Weeks, not months", label: "Delivery" },
-    { value: "Your cloud, your code", label: "Ownership" },
-    { value: "Build → hand over → support", label: "Engagement" },
-  ],
-} as const;
-
-export const problem = {
-  eyebrow: "// THE PROBLEM",
-  heading: "Six months before the first agent ships.",
-  columns: [
-    {
-      title: "Do it yourself.",
-      body: "Compute, model serving, a way for agents to reach tools and models, monitoring, cost control. Six months or more, a platform team you don't have, and none of it is what your company is for.",
-    },
-    {
-      title: "With Droplet Labs.",
-      body: "One production-ready platform on your cloud, in weeks. Your engineers spend their time on the AI that sets your product apart, not on the plumbing underneath it.",
-    },
-  ],
-} as const;
-
-export const platform = {
-  eyebrow: "// THE PLATFORM",
-  heading: "One platform. Everything agents need to run in production.",
-  capabilities: [
-    { title: "Model serving on your GPUs", detail: "open models and your own" },
-    {
-      title: "One interface for agents, tools and models",
-      detail: "hosted or self-hosted",
-    },
-    { title: "Observability in the stack you already run", detail: null },
-    {
-      title: "Usage tracking and cost control",
-      detail: "per team, agent and model",
-    },
-    {
-      title: "Quotas, limits and audit",
-      detail: "no runaway agent, no unanswered \"who called what\"",
-    },
-    {
-      title: "The process to operate and scale it",
-      detail: "runbooks, on-call, adding models and agents without calling us",
-    },
-  ],
-  boundary:
-    "We build the platform and the way to run it. You build the agents on top.",
-} as const;
-
-export const ownership = {
-  heading: "You own it. All of it.",
-  body: "Built on your cloud, in your accounts. Your code, your repos, your configuration. Wired into the observability, identity and tooling you already use rather than replacing them. When we step back, your team runs it, and nothing routes through us.",
-} as const;
-
 export const fit = {
-  eyebrow: "// FIT",
   heading: "Who it's for",
   columns: [
     {
@@ -167,7 +104,6 @@ export const fit = {
 } as const;
 
 export const faq = {
-  eyebrow: "// FAQ",
   heading: "Questions a CTO asks",
   items: [
     {
@@ -198,21 +134,11 @@ export const faq = {
 } as const;
 
 export const demosSection = {
-  eyebrow: "// DEMOS",
   heading: "Demos",
   note: "Coming soon.",
 } as const;
 
-export const contact = {
-  eyebrow: "// LET'S TALK",
-  heading: "Ready to run AI in production?",
-  sub: "Thirty minutes. Tell us what you're building and what you run today; we'll tell you what the platform looks like and how long it takes.",
-  primaryCta: BOOK_CALL_LABEL,
-  secondaryCta: "Email us",
-} as const;
-
 export const process = {
-  eyebrow: "// PROCESS",
   heading: "How we work",
 } as const;
 
