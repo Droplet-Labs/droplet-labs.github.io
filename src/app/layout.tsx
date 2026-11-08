@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Droplet Labs — Your AI platform. On your cloud. In weeks.",
+        alt: "Droplet Labs — The agent is the easy part. Your AI platform, on your cloud, in weeks.",
       },
     ],
     type: "website",
