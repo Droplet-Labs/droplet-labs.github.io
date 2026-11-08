@@ -122,11 +122,15 @@ diagram; right is a column of five chapters, each ~100vh tall, vertically
 centred text, max 30ch.
 
 Mobile (< 860px): the canvas is sticky **below the fixed nav**
-(`top: 64px`) at ~50vh; chapters follow at ~60vh each. On phones the
-diagram keeps the five layer titles and drops the sub-lines, with the
-title size scaled so it stays legible (≥ 11px rendered); the chapter copy
-carries the detail. The agent dot and "run by your team" tag must stay
-visible below the nav.
+(`top: 64px`) at ~44vh with an opaque `deep` background so chapter text
+slides cleanly under it. Chapters are **top-aligned**, not centred, with
+`min-height: 56vh` and 32px top padding so the heading is read first; on
+phones the H2 is 28px and body copy 16px/1.5 so chapter 4 (the longest)
+fits beneath the canvas on a 390×844 phone without the heading scrolling
+away. On phones the diagram keeps the five layer titles and drops the
+sub-lines, with the title size scaled so it stays legible (≥ 11px
+rendered). The agent dot and "run by your team" tag must stay visible
+below the nav.
 
 **Diagram** (SVG, as in mockup): a surface line with the agent dot on it;
 a dotted flow line from the agent into the first layer; five layers
@@ -256,6 +260,10 @@ light sections.
   phone diagram keeps titles, drops subs, sits below the nav; closing ask
   added before the footer; `look-brief.html` committed as the reference
   for the light sections; the How-we-work counter stays mono.
+
+- 2026-11-08, author after second builder check: phone vertical budget
+  settled — canvas 44vh opaque, chapters top-aligned at 56vh, H2 28px and
+  body 16px on phones.
 
 ## Left to the builder
 - Exact Tailwind classes; whether stage logic uses IntersectionObserver or
