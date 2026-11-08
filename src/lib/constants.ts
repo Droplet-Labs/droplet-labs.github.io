@@ -5,11 +5,81 @@ export const CONTACT_EMAIL = "hello@dropletlabs.co";
 export const navLinks = [
   { label: "Platform", href: "#platform" },
   { label: "How we work", href: "#how-it-works" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Questions", href: "#faq" },
   { label: "Demos", href: "#demos" },
 ] as const;
 
 export const BOOK_CALL_LABEL = "Book a call";
+
+export const story = {
+  nav: { brand: "Droplet Labs" },
+  hero: {
+    headline: "The agent is the easy part.",
+    sub: "Everyone wants to ship AI agents. Beneath every one that runs in production sits six months of infrastructure.",
+    hint: "Scroll down to see what's beneath",
+  },
+  layers: [
+    {
+      title: "One interface for agents, tools and models",
+      sub: "every route, chosen per task",
+    },
+    {
+      title: "Open models served on your GPUs",
+      sub: "next to the hosted ones, not instead",
+    },
+    {
+      title: "Fine-tuning and serving your own models",
+      sub: "versioned, rolled out, rolled back",
+    },
+    {
+      title: "Observability, usage and cost control",
+      sub: "per team, agent and model",
+    },
+    {
+      title: "Quotas, audit, runbooks, on-call",
+      sub: "the part nobody budgets for",
+    },
+  ],
+  chapters: [
+    {
+      tag: "stage 1 · an API key",
+      heading: "It starts with an API key.",
+      body: "One agent, one hosted model, a weekend. This is where everyone starts, and for plenty of tasks it stays the right answer.",
+    },
+    {
+      tag: "stage 2 · your own GPUs",
+      heading: "Then the bill arrives.",
+      body: "For some workloads, public models stop adding up: cost at volume, latency, data you'd rather keep. So you bring open-source models onto your own GPUs for those tasks. The hosted models don't go away. Now there are two routes, and someone has to run a serving stack.",
+    },
+    {
+      tag: "stage 3 · your own models",
+      heading: "Then you want models that know your business.",
+      body: "You fine-tune on your data and serve those models next to the hosted and open ones. Three routes now, and every agent should be free to pick the right one for the task in front of it.",
+    },
+    {
+      tag: "stage 4 · a platform",
+      heading: "Now it's a platform, whether you planned one or not.",
+      body: "Three routes, several agents, several teams. One interface so each task reaches the right model. Someone to see every call, attribute what it costs, cap what runs away, and carry the pager. Six months of work, a team you don't have, none of it your core business.",
+    },
+    {
+      tag: "with Droplet Labs · weeks",
+      heading: "We build what's beneath.",
+      body: "The whole platform, on your cloud, in your accounts, in weeks. Hosted, open and your own models, all available, chosen per task. Fixed scope. Then we train your team and hand over the keys.",
+    },
+  ],
+  cloudCaption: "Your cloud · AWS, GCP or Azure · your Kubernetes, your Grafana",
+  ownedTag: "run by your team",
+  rise: {
+    heading: "Your agents, in production.",
+    body: "Hosted, open or your own: your agents pick the model for the task. We build the platform under them. Your team owns all of it.",
+    cta: "Book a 30-minute call",
+    emailLabel: "Email us",
+  },
+  closing: {
+    line: "Ready to see what's beneath your agents?",
+    cta: "Book a 30-minute call",
+  },
+} as const;
 
 export const hero = {
   eyebrow: "// AI PLATFORM",
