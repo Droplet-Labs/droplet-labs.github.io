@@ -1,58 +1,28 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { steps, process } from "@/lib/constants";
-import { GradientOrb } from "@/components/gradient-orb";
-import { StaggerGrid, staggerItemVariants } from "@/components/stagger-grid";
-import { MotionWrapper } from "@/components/motion-wrapper";
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="scroll-mt-20 py-20 md:py-28 relative">
-      <GradientOrb
-        color="rgba(6,182,212,0.04)"
-        size={200}
-        className="left-[20%] top-0"
-      />
+    <section id="how-it-works" className="scroll-mt-16 py-20 md:py-[104px]">
+      <div className="max-w-[1120px] mx-auto px-5 md:px-8">
+        <h2 className="text-[clamp(34px,3.6vw,48px)] font-semibold tracking-[-0.03em] leading-none text-[#0f172a]">
+          {process.heading}
+        </h2>
 
-      <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
-        <MotionWrapper>
-          <span className="font-[family-name:var(--font-jetbrains)] text-sm text-water-dark-cyan tracking-[0.2em]">
-            {process.eyebrow}
-          </span>
-          <h2 className="font-[family-name:var(--font-outfit)] text-4xl md:text-5xl font-bold tracking-tight text-foreground mt-3">
-            {process.heading}
-          </h2>
-        </MotionWrapper>
-
-        <StaggerGrid className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-          {steps.map((step) => (
-            <motion.div
-              key={step.number}
-              variants={staggerItemVariants}
-              className="bg-white rounded-xl p-6 relative overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-slate-200/80"
-            >
-              <div
-                className="absolute top-0 left-0 right-0 h-[3px] rounded-t-xl"
-                style={{
-                  background: `linear-gradient(90deg, ${step.color}, transparent)`,
-                }}
-              />
-              <span
-                className="font-[family-name:var(--font-jetbrains)] text-4xl font-bold block mb-3"
-                style={{ color: step.colorFaded }}
-              >
-                {step.number}
+        <ol className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-14 list-none p-0">
+          {steps.map((step, index) => (
+            <li key={step.title} className="pt-[18px] border-t-2 border-[#0f172a]">
+              <span className="font-[family-name:var(--font-jetbrains)] text-[13px] text-[#0891b2]">
+                {index + 1}
               </span>
-              <h3 className="font-[family-name:var(--font-outfit)] text-base font-semibold text-foreground">
+              <h3 className="text-[22px] font-semibold tracking-[-0.015em] mt-2.5 text-[#0f172a]">
                 {step.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mt-2">
+              <p className="text-base text-[#4b5a6b] leading-relaxed mt-2">
                 {step.description}
               </p>
-            </motion.div>
+            </li>
           ))}
-        </StaggerGrid>
+        </ol>
       </div>
     </section>
   );

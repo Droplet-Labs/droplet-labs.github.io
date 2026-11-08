@@ -1,39 +1,28 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { faq } from "@/lib/constants";
-import { StaggerGrid, staggerItemVariants } from "@/components/stagger-grid";
-import { MotionWrapper } from "@/components/motion-wrapper";
 
 export function Faq() {
   return (
-    <section id="faq" className="scroll-mt-20 py-20 md:py-28 relative">
-      <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
-        <MotionWrapper>
-          <span className="font-[family-name:var(--font-jetbrains)] text-sm text-water-dark-cyan tracking-[0.2em]">
-            {faq.eyebrow}
-          </span>
-          <h2 className="font-[family-name:var(--font-outfit)] text-4xl md:text-5xl font-bold tracking-tight text-foreground mt-3">
-            {faq.heading}
-          </h2>
-        </MotionWrapper>
+    <section id="faq" className="scroll-mt-16 py-20 md:py-[104px]">
+      <div className="max-w-[1120px] mx-auto px-5 md:px-8">
+        <h2 className="text-[clamp(34px,3.6vw,48px)] font-semibold tracking-[-0.03em] leading-none text-[#0f172a]">
+          {faq.heading}
+        </h2>
 
-        <StaggerGrid className="flex flex-col gap-3 mt-10">
+        <dl className="mt-14 border-t border-[rgba(8,145,178,0.22)]">
           {faq.items.map((item) => (
-            <motion.div
+            <div
               key={item.q}
-              variants={staggerItemVariants}
-              className="bg-white rounded-xl p-6 shadow-sm border border-slate-200/80"
+              className="py-6 border-b border-[rgba(8,145,178,0.22)]"
             >
-              <h3 className="font-[family-name:var(--font-outfit)] text-base font-semibold text-foreground">
+              <dt className="text-xl font-semibold tracking-[-0.01em] text-[#0f172a]">
                 {item.q}
-              </h3>
-              <p className="text-base text-muted-foreground leading-relaxed mt-2">
+              </dt>
+              <dd className="mt-2 text-[17px] text-[#4b5a6b] leading-relaxed max-w-[60ch]">
                 {item.a}
-              </p>
-            </motion.div>
+              </dd>
+            </div>
           ))}
-        </StaggerGrid>
+        </dl>
       </div>
     </section>
   );
