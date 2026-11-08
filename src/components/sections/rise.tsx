@@ -33,6 +33,8 @@ export function Rise() {
         </p>
         <a
           href={CALENDLY_URL}
+          data-analytics-event="book_call_click"
+          data-analytics-position="mid_page"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block mt-10 rounded-full bg-white text-[#041c2c] font-semibold px-7 py-4 text-[17px] hover:bg-white/90 transition-colors"
@@ -41,6 +43,7 @@ export function Rise() {
         </a>
         <a
           href={`mailto:${CONTACT_EMAIL}`}
+          data-analytics-event="email_click"
           className="mt-5 block text-white font-medium underline underline-offset-4 hover:text-white/80 transition-colors"
         >
           {story.rise.emailLabel}

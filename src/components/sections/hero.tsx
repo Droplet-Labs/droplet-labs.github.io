@@ -22,12 +22,12 @@ export function Hero() {
         <h1 className="text-[clamp(48px,8vw,120px)] font-semibold tracking-[-0.03em] leading-[0.95] text-white">
           {story.hero.headline}
         </h1>
-        <p className="text-[clamp(20px,3.4vw,50px)] font-medium text-white/45 leading-snug mt-7 max-w-[26ch] mx-auto">
+        <p className="text-[clamp(20px,3.4vw,50px)] font-medium text-white/70 leading-snug mt-7 max-w-[26ch] mx-auto">
           {story.hero.sub}
         </p>
       </div>
 
-      <div className="absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5 text-[13px] text-white/50">
+      <div className="absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5 text-[13px] text-white/60">
         <span>{story.hero.hint}</span>
         <span
           className="block w-px h-9 story-hint"

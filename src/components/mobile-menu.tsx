@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, CALENDLY_URL, BOOK_CALL_LABEL } from "@/lib/constants";
 
@@ -10,8 +11,18 @@ export function MobileMenu({
   isOpen: boolean;
   onClose: () => void;
 }) {
+  // A smooth scroll started while the menu is collapsing gets cancelled, so
+  // a tapped section link waits here until the exit animation finishes.
+  const pendingTarget = useRef<string | null>(null);
+
   return (
-    <AnimatePresence>
+    <AnimatePresence
+      onExitComplete={() => {
+        if (!pendingTarget.current) return;
+        document.querySelector(pendingTarget.current)?.scrollIntoView();
+        pendingTarget.current = null;
+      }}
+    >
       {isOpen && (
         <motion.div
           initial={{ height: 0, opacity: 0 }}
@@ -26,7 +37,12 @@ export function MobileMenu({
               <a
                 key={link.href}
                 href={link.href}
-                onClick={onClose}
+                onClick={(e) => {
+                  e.preventDefault();
+                  pendingTarget.current = link.href;
+                  history.pushState(null, "", link.href);
+                  onClose();
+                }}
                 className="text-white/65 hover:text-white transition-colors py-3 text-[15px]"
               >
                 {link.label}
@@ -34,6 +50,8 @@ export function MobileMenu({
             ))}
             <a
               href={CALENDLY_URL}
+              data-analytics-event="book_call_click"
+              data-analytics-position="nav"
               target="_blank"
               rel="noopener noreferrer"
               onClick={onClose}

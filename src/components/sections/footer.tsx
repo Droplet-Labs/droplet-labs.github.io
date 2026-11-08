@@ -8,7 +8,7 @@ export function Footer() {
       style={{ background: "#041c2c" }}
     >
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-        <span className="text-white/30 text-xs">
+        <span className="text-white/60 text-xs">
           &copy; {new Date().getFullYear()} Droplet Labs. All rights reserved.
         </span>
         <div className="flex gap-5">
@@ -16,10 +16,11 @@ export function Footer() {
             <a
               key={link.label}
               href={link.href}
+              data-analytics-event={`${link.label.toLowerCase()}_click`}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Droplet Labs on ${link.label}`}
-              className="text-white/40 text-xs hover:text-water-cyan transition-colors"
+              className="text-white/60 text-xs hover:text-water-cyan transition-colors"
             >
               {link.label}
             </a>
