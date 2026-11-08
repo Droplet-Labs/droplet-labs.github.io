@@ -60,7 +60,7 @@ export function Descent() {
       id="platform"
       className="scroll-mt-16 bg-[#041c2c] text-white grid grid-cols-1 md:grid-cols-2"
     >
-      <div className="sticky top-16 md:top-0 h-[44vh] md:h-screen bg-[#041c2c] flex items-center justify-center px-5 md:px-10">
+      <div className="sticky top-16 h-[44vh] md:h-[calc(100vh-4rem)] bg-[#041c2c] flex items-center justify-center px-5 md:px-10 py-2">
         <PlatformDiagram stage={stage} compact={compact} />
       </div>
 

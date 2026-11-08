@@ -70,7 +70,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      className={`${outfit.variable} ${jetbrainsMono.variable} motion-safe:scroll-smooth`}
     >
       <head>
         <script

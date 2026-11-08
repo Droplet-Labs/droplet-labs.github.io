@@ -18,6 +18,7 @@ export function MobileMenu({
           animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
+          id="mobile-menu"
           className="overflow-hidden md:hidden absolute top-full left-0 right-0 bg-[#041c2c] border-b border-white/10"
         >
           <nav className="flex flex-col px-5 py-4 gap-1">

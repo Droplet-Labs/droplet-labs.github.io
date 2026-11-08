@@ -52,7 +52,7 @@ export function Navbar() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center rounded-full border border-white/35 px-4 py-2 text-[15px] font-semibold text-white hover:border-white transition-colors"
+            className="inline-flex items-center rounded-full border border-white/35 px-3 py-1.5 text-[13px] md:px-4 md:py-2 md:text-[15px] font-semibold text-white hover:border-white transition-colors"
           >
             {BOOK_CALL_LABEL}
           </a>
@@ -61,6 +61,8 @@ export function Navbar() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden text-white"
             aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>

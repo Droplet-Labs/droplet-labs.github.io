@@ -9,7 +9,7 @@ export function Rise() {
       className="scroll-mt-16 min-h-screen grid place-items-center text-center px-5 md:px-8"
       style={{
         background:
-          "linear-gradient(180deg, #041c2c 0%, #164e63 55%, #e8f4f2 100%)",
+          "linear-gradient(180deg, #041c2c 0%, #0d3448 45%, #164e63 72%, #e8f4f2 100%)",
       }}
     >
       <div className="py-24">
@@ -41,7 +41,7 @@ export function Rise() {
         </a>
         <a
           href={`mailto:${CONTACT_EMAIL}`}
-          className="mt-5 block text-white/70 underline underline-offset-4 hover:text-white transition-colors"
+          className="mt-5 block text-white font-medium underline underline-offset-4 hover:text-white/80 transition-colors"
         >
           {story.rise.emailLabel}
         </a>

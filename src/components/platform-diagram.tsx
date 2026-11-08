@@ -19,7 +19,7 @@ export function PlatformDiagram({
   return (
     <svg
       viewBox="0 0 520 620"
-      className="w-full max-w-[520px] max-h-[calc(100vh-48px)] h-auto"
+      className="w-full h-full max-w-[520px]"
       aria-label="The platform beneath an agent"
       role="img"
     >
@@ -48,7 +48,7 @@ export function PlatformDiagram({
           <text
             x="20"
             y={compact ? 46 : 34}
-            fontSize={compact ? 18 : 15}
+            fontSize={compact ? 20 : 15}
             fontWeight="600"
             style={{ fontFamily: "inherit" }}
           >
